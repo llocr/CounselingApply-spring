@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상담 신청하기</title>
+    <style>
+        * {
+            text-align: center;
+            line-height: 150%;
+        }
+    </style>
+</head>
+<body>
+    <h1>상담 신청하기</h1>
+    <form action="application" method="post" enctype="multipart/form-data">
+        이름 : <input type="text" name="name" placeholder="홍길동"><br>
+        나이 : <input type="number" name="age" placeholder="20"><br>
+        성별 :
+        <select name="gender">
+            <option value="M">남자</option>
+            <option value="W">여자</option>
+        </select><br>
+        생년월일 : <input type="date" name="birth"><br>
+        원하시는 상담 :
+        <select name="type">
+            <option value="personal">개인상담</option>
+            <option value="group">집단상담</option>
+            <option value="family">가족상담</option>
+            <option value="career">진로상담</option>
+        </select><br>
+        상담받고 싶은 내용을 기술해주세요<br>
+        <textarea name="description" cols="40" rows="10"></textarea><br>
+        상담 동의서 제출 : <input type="file" name="consentFile"><br><br>
+        <button type="submit">신청</button>
+    </form>
+</body>
+</html>

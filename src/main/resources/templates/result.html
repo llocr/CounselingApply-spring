@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상담 신청 확인</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2 th:text="|${client.name} 님의 상담 신청 정보입니다.|"></h2>
+    <th:block th:object="${client}" >
+        <p th:text="|이름 : '*{name}'|"/>
+        <p th:text="|나이 : '*{age}'|"/>
+        <th:block th:switch="*{gender}">
+            성별 :
+            <span th:case="M">남자</span>
+            <span th:case="W">여자</span>
+        </th:block>
+        <p th:text="|생년월일 : '*{birth}'|"/>
+        <th:block th:switch="*{type}">
+            상담 종류 :
+            <span th:case="personal">개인상담</span>
+            <span th:case="group">집단상담</span>
+            <span th:case="family">가족상담</span>
+            <span th:case="career">진로상담</span>
+        </th:block>
+        <p th:text="|상담 받고 싶은 내용 : '*{description}'|"/>
+    </th:block>
+    <p th:text="|상담신청서 업로드 여부 : ${fileUploadCheck}|"></p>
+    <button onclick="location.href='/main'">메인화면으로 이동하기</button>
+</body>
+</html>
